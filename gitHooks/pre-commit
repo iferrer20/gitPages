@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if git --no-pager diff --staged | grep "^+" | grep -P "[\x80-\xFF]" &>/dev/null; then
+	echo "Se han detectado caracteres extraños"
+	exit 1
+fi
